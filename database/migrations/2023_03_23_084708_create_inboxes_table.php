@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('inboxes', function (Blueprint $table) {
             $table->id();
+            $table->string("title");
+            $table->longText("description");
+            $table->string("attachment")->nullable();
+            $table->unsignedBigInteger('department_id');
+            $table->unsignedBigInteger("assign_id");
+            $table->unsignedBigInteger("cc_id");
             $table->timestamps();
         });
     }
